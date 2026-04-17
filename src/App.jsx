@@ -80,8 +80,8 @@ function BuildingMark({ size = "md" }) {
 
 function BrandWordmark({ size = "md" }) {
   const textSizes = {
-    xs: "text-[1rem]",
-    sm: "text-[1.2rem]",
+    xs: "text-[0.98rem]",
+    sm: "text-[1.18rem]",
     md: "text-[1.7rem]",
   };
 
@@ -93,7 +93,7 @@ function BrandWordmark({ size = "md" }) {
           Corey Capital
         </div>
         <div className="text-[10px] uppercase tracking-[0.3em] text-slate-400">
-          Corey Entrepreneurs League
+          Entrepreneurs League
         </div>
       </div>
     </div>
@@ -137,6 +137,17 @@ function AuthorityCard({ title, body }) {
     <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-6">
       <div className="text-lg font-semibold text-white">{title}</div>
       <p className="mt-3 text-sm leading-7 text-slate-300">{body}</p>
+    </div>
+  );
+}
+
+function ProofCard({ title, body }) {
+  return (
+    <div className="rounded-3xl border border-white/10 bg-slate-950/70 p-6">
+      <div className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-400">
+        {title}
+      </div>
+      <p className="mt-4 text-sm leading-7 text-slate-300">{body}</p>
     </div>
   );
 }
@@ -254,8 +265,8 @@ function AccessPanel() {
         </div>
         <h2 className="text-2xl font-semibold text-white">Private Access Portal</h2>
         <p className="mt-2 text-sm text-slate-300">
-          Built to qualify serious users before they move closer to Corey, capital strategy,
-          and higher-trust opportunities.
+          Structured for qualified users who want business credit, capital positioning,
+          and closer proximity to Corey’s methodology.
         </p>
       </div>
 
@@ -269,10 +280,10 @@ function AccessPanel() {
         </div>
 
         <div>
-          <label className="mb-2 block text-sm text-slate-200">Capital or business objective</label>
+          <label className="mb-2 block text-sm text-slate-200">Primary objective</label>
           <input
             className="h-12 w-full rounded-xl border border-white/15 bg-white/10 px-4 text-white placeholder:text-slate-400 focus:outline-none"
-            placeholder="Funding, credit, positioning, or access"
+            placeholder="Funding, credit, leverage, or access"
           />
         </div>
 
@@ -284,17 +295,16 @@ function AccessPanel() {
       <div className="mt-5 grid grid-cols-2 gap-3 text-xs text-slate-200">
         <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
           <div className="mb-1 font-medium text-white">Qualified Entry</div>
-          Initial access framed around seriousness, not noise.
+          Serious users enter through a controlled front door.
         </div>
         <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
-          <div className="mb-1 font-medium text-white">Premium Positioning</div>
-          Structured path into deeper tiers and founder proximity.
+          <div className="mb-1 font-medium text-white">Premium Progression</div>
+          Structured path toward deeper access and founder proximity.
         </div>
       </div>
 
       <div className="mt-4 rounded-2xl border border-white/10 bg-black/20 p-3 text-xs text-slate-300">
-        Internal note: this is the hero-stage access panel for funnel integration and can later
-        connect to CRM, gated applications, or private intake flow.
+        This panel is designed to become the first step of a gated high-ticket funnel.
       </div>
     </div>
   );
@@ -341,14 +351,43 @@ function DesktopLayout() {
               </div>
 
               <h1 className="text-5xl font-semibold tracking-tight text-white md:text-6xl lg:text-7xl">
-                Structured access to business credit, capital strategy, and premium proximity to Corey.
+                Structured access to business credit, capital deployment, and premium proximity to Corey.
               </h1>
 
               <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-200">
-                Corey Capital is the private front door to Corey Entrepreneurs League — designed for
-                serious operators, capital seekers, and qualified users who want access to judgment,
-                positioning, and selective financial opportunity.
+                Corey Capital is the private front door to Corey Entrepreneurs League —
+                built for serious operators who want more than information. It is designed
+                for credibility, leverage, and access to structured financial opportunity.
               </p>
+
+              <div className="mt-6 rounded-3xl border border-white/10 bg-white/[0.04] p-5">
+                <div className="text-xs uppercase tracking-[0.26em] text-slate-400">
+                  Corey P. Smith
+                </div>
+                <div className="mt-3 text-2xl font-semibold tracking-tight text-white">
+                  Author • Credit Strategist • Capital Systems Architect
+                </div>
+                <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-300">
+                  Corey is known for turning credit literacy into usable leverage. His work
+                  goes beyond repair and into structured capital acquisition, business credit,
+                  and disciplined expansion of financial optionality.
+                </p>
+
+                <div className="mt-4 flex flex-wrap gap-2 text-xs uppercase tracking-[0.2em] text-slate-300">
+                  <span className="rounded-full border border-white/10 bg-white/5 px-3 py-2">
+                    Business Credit Systems
+                  </span>
+                  <span className="rounded-full border border-white/10 bg-white/5 px-3 py-2">
+                    Capital Access
+                  </span>
+                  <span className="rounded-full border border-white/10 bg-white/5 px-3 py-2">
+                    Financial Structuring
+                  </span>
+                  <span className="rounded-full border border-white/10 bg-white/5 px-3 py-2">
+                    Wealth Leverage
+                  </span>
+                </div>
+              </div>
 
               <div className="mt-8 flex flex-wrap gap-4">
                 <button className="rounded-xl bg-emerald-500 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-emerald-400">
@@ -376,31 +415,68 @@ function DesktopLayout() {
         <section className="mx-auto max-w-7xl px-6 py-10">
           <SectionHeading
             eyebrow="Founder Authority"
-            title="Why serious users would trust Corey with higher-value financial conversations."
-            body="The site should establish Corey as the premium asset. Not content. Not noise. Judgment, experience, selectivity, and strategic proximity."
+            title="Why serious users would trust Corey with high-value financial decisions."
+            body="Corey should be presented as the premium asset: not a generic personality, but a disciplined operator whose value lies in structured methodology, capital access, and long-horizon leverage thinking."
           />
 
           <div className="mt-8 grid gap-6 md:grid-cols-3">
             <AuthorityCard
-              title="Authority before promotion"
-              body="Lead with structure, credibility, and financial seriousness. This should feel closer to a private advisory platform than an online marketing site."
+              title="Beyond credit repair"
+              body="Most people are taught how to repair credit. Corey teaches how to structure it, access more of it, and use it as a lever for growth."
             />
             <AuthorityCard
-              title="Corey as the scarce asset"
-              body="The premium offer is not generic information. The premium offer is access to Corey’s thinking, strategic framing, and deeper proximity."
+              title="Capital as optionality"
+              body="His real differentiator is not information alone, but the ability to turn financial access into mobility, acquisitions, and reduced decision friction."
             />
             <AuthorityCard
-              title="Trust through restraint"
-              body="Minimal design, controlled language, and clear hierarchy create the kind of signal serious users associate with private financial ecosystems."
+              title="Trusted by transformation"
+              body="The platform should communicate that Corey’s work changes how people interact with banks, lenders, and financial opportunity at scale."
             />
           </div>
         </section>
 
         <section className="mx-auto max-w-7xl px-6 py-10">
           <SectionHeading
+            eyebrow="What Changes With Access"
+            title="Credit, properly structured, becomes leverage — not survival."
+            body="The outcome is not just approvals. It is the ability to operate with greater freedom, stronger purchasing power, and more control over timing, movement, and opportunity."
+          />
+
+          <div className="mt-8 grid gap-6 lg:grid-cols-3">
+            <ProofCard
+              title="Institutional Approval Profile"
+              body="High-limit revolving credit across major financial networks, premium cards, retail lines, and stronger lender confidence."
+            />
+            <ProofCard
+              title="Asset & Mobility Expansion"
+              body="Zero-down acquisition, favorable rates, travel flexibility, rental access, and lower dependence on immediate cash reserves."
+            />
+            <ProofCard
+              title="Capital Confidence"
+              body="Reduced stress, faster decisions, and the ability to pursue business, personal, or strategic opportunities with real leverage behind them."
+            />
+          </div>
+
+          <div className="mt-8 rounded-3xl border border-emerald-500/20 bg-emerald-500/8 p-6">
+            <div className="text-sm uppercase tracking-[0.24em] text-emerald-300">
+              Core Principle
+            </div>
+            <div className="mt-3 text-2xl font-semibold tracking-tight text-white">
+              Access is only phase one. Expansion is where the real leverage begins.
+            </div>
+            <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-300">
+              Corey’s value lies in teaching people how to move from financial constraint
+              into structured access — and then how to extend that access into wider freedom,
+              better positioning, and long-term wealth-building capacity.
+            </p>
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-7xl px-6 py-10">
+          <SectionHeading
             eyebrow="Access Architecture"
-            title="Three tiers, three levels of proximity."
-            body="The monetization model should be obvious and elegant: Standard for entry, Premium for deeper strategic value, Diamond for direct access to Corey."
+            title="Three tiers. Three levels of proximity."
+            body="Standard opens the platform. Premium deepens strategic context. Diamond is the direct path to Corey."
           />
 
           <div className="mt-8 grid gap-6 xl:grid-cols-3">
@@ -412,9 +488,9 @@ function DesktopLayout() {
               access="Business credit platform layer, entry resources, and qualified funnel positioning."
               features={[
                 "Platform access",
-                "Foundational business credit content",
+                "Foundational business credit resources",
                 "Private member environment",
-                "Initial funnel entry",
+                "Initial access path into the system",
               ]}
               cta="Enter Standard"
             />
@@ -423,13 +499,13 @@ function DesktopLayout() {
               tier="Premium"
               price="$997"
               cadence="year"
-              subtitle="Strategy, context, and a more serious financial positioning layer."
-              access="A higher-context tier for users who want stronger insight and better capital readiness framing."
+              subtitle="Strategy, context, and deeper financial positioning."
+              access="A higher-context tier for users who want stronger insight and sharper capital-readiness framing."
               features={[
                 "Everything in Standard",
                 "Expanded strategic guidance",
-                "Higher-context business credit insights",
-                "Premium funnel placement",
+                "Higher-context business credit insight",
+                "Priority progression into premium funnel layers",
               ]}
               cta="Unlock Premium"
             />
@@ -438,12 +514,12 @@ function DesktopLayout() {
               tier="Diamond"
               price="$2,500"
               cadence="entry"
-              subtitle="Direct access path for serious users who want real proximity to Corey."
-              access="The premium tier built around direct access, selectivity, and high-value user filtering."
+              subtitle="Direct access path for serious users seeking real proximity to Corey."
+              access="The premium tier built around selectivity, founder access, and high-value positioning."
               features={[
                 "Everything in Premium",
                 "Direct access pathway to Corey",
-                "Highest-trust positioning",
+                "Highest-trust placement",
                 "Private opportunity orientation",
               ]}
               cta="Apply for Diamond"
@@ -462,8 +538,8 @@ function DesktopLayout() {
                 The site is the front door. The real engine is qualification, capture, and controlled progression.
               </h3>
               <p className="mt-4 text-base leading-8 text-slate-300">
-                This first build establishes authority and premium positioning. The next phase connects
-                this to gated access, lead capture, qualification logic, CRM flow, and deeper founder access.
+                This build establishes authority, transformation, and premium positioning.
+                The next phase connects the experience to gated access, lead capture, and deeper founder interaction.
               </p>
             </div>
 
@@ -505,11 +581,11 @@ function MobileLayout() {
           </div>
 
           <h1 className="mt-5 text-5xl font-semibold leading-[0.96] tracking-tight text-white">
-            A private platform built around Corey’s judgment, access, and financial positioning.
+            A private platform built around Corey’s judgment, leverage, and access.
           </h1>
 
           <p className="mt-4 text-sm leading-7 text-slate-300">
-            Business credit, capital strategy, and premium proximity for serious operators.
+            Structured business credit, capital positioning, and premium founder proximity for serious operators.
           </p>
 
           <div className="mt-5 grid grid-cols-1 gap-3">
@@ -535,19 +611,27 @@ function MobileLayout() {
 
           <div className="rounded-2xl border border-white/10 bg-slate-950/70 p-4">
             <div className="text-xs uppercase tracking-[0.24em] text-slate-400">
-              Corey Positioning
+              Corey P. Smith
             </div>
             <div className="mt-3 text-2xl font-semibold tracking-tight text-white">
-              Corey is the premium asset.
+              Author • Credit Strategist • Capital Systems Architect
             </div>
             <p className="mt-3 text-sm leading-7 text-slate-300">
-              The monetization model is structured access: platform entry, strategic depth, and direct proximity.
+              Corey’s value is not just credit education. It is structured access, financial leverage,
+              and the disciplined expansion of opportunity.
             </p>
           </div>
 
-          <div className="mt-4 grid grid-cols-2 gap-3">
-            <CompactStat value="High" label="Trust tone" />
-            <CompactStat value="Qualified" label="Entry path" />
+          <div className="mt-4 flex flex-wrap gap-2 text-[10px] uppercase tracking-[0.18em] text-slate-300">
+            <span className="rounded-full border border-white/10 bg-white/5 px-3 py-2">
+              Business Credit
+            </span>
+            <span className="rounded-full border border-white/10 bg-white/5 px-3 py-2">
+              Capital Access
+            </span>
+            <span className="rounded-full border border-white/10 bg-white/5 px-3 py-2">
+              Wealth Leverage
+            </span>
           </div>
         </section>
 
@@ -622,30 +706,30 @@ function MobileLayout() {
             >
               <div className="space-y-2 text-sm text-slate-300">
                 <div className="rounded-xl border border-white/10 bg-slate-950/60 px-3 py-3">
-                  He is positioned as judgment and access, not entertainment.
+                  He is positioned as judgment and structured access, not entertainment.
                 </div>
                 <div className="rounded-xl border border-white/10 bg-slate-950/60 px-3 py-3">
-                  The site leads with credibility, structure, and financial seriousness.
+                  His differentiator is not repair alone, but expansion and leverage.
                 </div>
                 <div className="rounded-xl border border-white/10 bg-slate-950/60 px-3 py-3">
-                  The value is controlled proximity to Corey’s thinking and opportunities.
+                  The platform communicates financial seriousness, selectivity, and capital optionality.
                 </div>
               </div>
             </ExpandableSection>
 
             <ExpandableSection
-              title="What the platform does"
-              subtitle="Tap for the ecosystem view"
+              title="What changes with access"
+              subtitle="Tap for transformation"
             >
               <div className="space-y-2 text-sm text-slate-300">
                 <div className="rounded-xl border border-white/10 bg-slate-950/60 px-3 py-3">
-                  Helps users understand where they fit.
+                  Stronger approvals across major financial networks and lender environments.
                 </div>
                 <div className="rounded-xl border border-white/10 bg-slate-950/60 px-3 py-3">
-                  Moves serious visitors toward premium access paths.
+                  Better asset mobility, travel flexibility, and reduced dependence on immediate cash.
                 </div>
                 <div className="rounded-xl border border-white/10 bg-slate-950/60 px-3 py-3">
-                  Sets up gated intake and higher-value progression.
+                  Greater optionality, lower friction, and more confident decision-making.
                 </div>
               </div>
             </ExpandableSection>
