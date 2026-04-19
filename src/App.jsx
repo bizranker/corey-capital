@@ -12,6 +12,7 @@ const tiers = [
       "Core credit and capital orientation",
       "Foundational progression layer",
     ],
+    cta: "Enter Foundation Layer",
     accent: "tier-foundation",
   },
   {
@@ -25,6 +26,7 @@ const tiers = [
       "Deeper qualification review",
       "Progression toward higher-touch access",
     ],
+    cta: "Unlock Strategic Expansion",
     accent: "tier-premium",
   },
   {
@@ -38,6 +40,7 @@ const tiers = [
       "High-touch access pathway",
       "Built for serious deployment readiness",
     ],
+    cta: "Request Direct Proximity",
     accent: "tier-diamond",
   },
 ];
@@ -66,6 +69,41 @@ const corePrinciples = [
   "Capital pathways scale with readiness.",
 ];
 
+const progressionSteps = [
+  {
+    step: "01",
+    title: "Enter Profile",
+    detail: "Provide your objective and operating stage.",
+  },
+  {
+    step: "02",
+    title: "Qualification Review",
+    detail: "Signal strength, readiness, and fit are assessed.",
+  },
+  {
+    step: "03",
+    title: "Tier Alignment",
+    detail: "The right access layer is matched to your position.",
+  },
+  {
+    step: "04",
+    title: "Access Expansion",
+    detail: "Progression opens deeper strategic pathways.",
+  },
+];
+
+function BuildingMark() {
+  return (
+    <svg viewBox="0 0 64 64" className="brand-svg" aria-hidden="true">
+      <rect x="10" y="18" width="18" height="30" rx="3" />
+      <rect x="36" y="10" width="18" height="38" rx="3" />
+      <path d="M16 24h6M16 30h6M16 36h6M16 42h6" />
+      <path d="M42 18h6M42 24h6M42 30h6M42 36h6M42 42h6" />
+      <path d="M8 50h48" />
+    </svg>
+  );
+}
+
 function SectionIcon({ type }) {
   if (type === "authority") {
     return (
@@ -80,12 +118,8 @@ function SectionIcon({ type }) {
   if (type === "architecture") {
     return (
       <svg viewBox="0 0 24 24" className="section-icon" aria-hidden="true">
-        <circle cx="6" cy="6" r="2" />
-        <circle cx="18" cy="6" r="2" />
-        <circle cx="12" cy="18" r="2" />
-        <path d="M8 6h8" />
-        <path d="M7.4 7.3 10.8 15" />
-        <path d="M16.6 7.3 13.2 15" />
+        <path d="M5 12h14" />
+        <path d="M17 8l4 4-4 4" />
       </svg>
     );
   }
@@ -114,8 +148,6 @@ export default function App() {
     <div className="cc-shell">
       <style>{`
         :root {
-          --bg: #06111f;
-          --bg-2: #0b1730;
           --panel: rgba(9, 18, 38, 0.82);
           --panel-2: rgba(12, 24, 48, 0.9);
           --panel-alt: rgba(11, 21, 42, 0.86);
@@ -125,13 +157,8 @@ export default function App() {
           --muted: rgba(237,242,255,0.70);
           --soft: rgba(237,242,255,0.52);
           --teal: #18c7a1;
-          --teal-soft: rgba(24,199,161,0.18);
           --blue: #5b8cff;
-          --blue-soft: rgba(91,140,255,0.16);
           --gold: #d7a64c;
-          --gold-soft: rgba(215,166,76,0.18);
-          --violet: #8577ff;
-          --violet-soft: rgba(133,119,255,0.18);
           --shadow: 0 24px 80px rgba(0,0,0,0.35);
         }
 
@@ -160,7 +187,7 @@ export default function App() {
           position: fixed;
           inset: 0;
           pointer-events: none;
-          opacity: 0.26;
+          opacity: 0.24;
           background-image:
             linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
             linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
@@ -179,7 +206,6 @@ export default function App() {
           position: absolute;
           border: 1px solid rgba(255,255,255,0.05);
           border-radius: 999px;
-          filter: blur(0.2px);
         }
 
         .orbit-a {
@@ -233,8 +259,8 @@ export default function App() {
         }
 
         .brand-mark {
-          width: 44px;
-          height: 44px;
+          width: 48px;
+          height: 48px;
           border-radius: 14px;
           display: grid;
           place-items: center;
@@ -242,10 +268,18 @@ export default function App() {
           background:
             linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)),
             rgba(12, 24, 48, 0.8);
-          color: #ffffff;
-          font-weight: 700;
-          letter-spacing: 0.08em;
           box-shadow: 0 0 24px rgba(91,140,255,0.10);
+          flex: 0 0 auto;
+        }
+
+        .brand-svg {
+          width: 26px;
+          height: 26px;
+          stroke: rgba(255,255,255,0.92);
+          stroke-width: 1.7;
+          fill: none;
+          stroke-linecap: round;
+          stroke-linejoin: round;
         }
 
         .brand-text {
@@ -328,7 +362,7 @@ export default function App() {
 
         .hero {
           display: grid;
-          grid-template-columns: 1.18fr 0.92fr;
+          grid-template-columns: 1.15fr 0.92fr;
           gap: 28px;
           align-items: stretch;
         }
@@ -380,8 +414,8 @@ export default function App() {
 
         .hero-right {
           background:
-            radial-gradient(circle at 80% 8%, rgba(215,166,76,0.12), transparent 26%),
-            radial-gradient(circle at 8% 60%, rgba(91,140,255,0.10), transparent 24%),
+            radial-gradient(circle at 84% 12%, rgba(24,199,161,0.10), transparent 24%),
+            radial-gradient(circle at 12% 64%, rgba(91,140,255,0.10), transparent 26%),
             var(--panel-2);
         }
 
@@ -520,10 +554,10 @@ export default function App() {
         }
 
         .entry-title {
-          font-size: clamp(1.8rem, 4vw, 2.45rem);
+          font-size: clamp(1.65rem, 4vw, 2.2rem);
           line-height: 1.1;
           font-weight: 640;
-          margin: 0 0 14px;
+          margin: 0 0 12px;
         }
 
         .entry-copy {
@@ -541,44 +575,45 @@ export default function App() {
           margin: 0 0 18px;
         }
 
-        .form-shell {
-          margin-top: 16px;
+        .preview-stack {
+          display: grid;
+          gap: 14px;
+          margin-top: 18px;
         }
 
-        .field {
-          margin-bottom: 16px;
+        .preview-item {
+          border: 1px solid var(--line);
+          border-radius: 18px;
+          padding: 16px 16px 15px;
+          background: rgba(255,255,255,0.025);
         }
 
-        .field label {
-          display: block;
-          font-size: 12px;
-          letter-spacing: 0.08em;
+        .preview-item-top {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 12px;
+          margin-bottom: 10px;
+        }
+
+        .preview-label {
+          font-size: 11px;
+          letter-spacing: 0.16em;
           text-transform: uppercase;
           color: var(--soft);
-          margin-bottom: 8px;
         }
 
-        .field input,
-        .field select {
-          width: 100%;
-          min-height: 52px;
-          border-radius: 15px;
-          border: 1px solid var(--line);
-          background: rgba(255,255,255,0.03);
-          color: var(--text);
-          padding: 0 16px;
-          font-size: 15px;
-          outline: none;
+        .preview-value {
+          font-size: 14px;
+          font-weight: 650;
+          color: rgba(237,242,255,0.92);
         }
 
-        .field input::placeholder {
-          color: rgba(237,242,255,0.36);
-        }
-
-        .field input:focus,
-        .field select:focus {
-          border-color: rgba(24,199,161,0.45);
-          box-shadow: 0 0 0 3px rgba(24,199,161,0.10);
+        .preview-copy {
+          margin: 0;
+          font-size: 14px;
+          line-height: 1.65;
+          color: var(--muted);
         }
 
         .entry-footer {
@@ -705,32 +740,56 @@ export default function App() {
           font-style: italic;
         }
 
-        .node-board {
-          position: relative;
-          min-height: 260px;
-          border: 1px solid var(--line);
-          border-radius: 24px;
-          padding: 24px;
-          background: rgba(255,255,255,0.02);
-          overflow: hidden;
+        .progress-strip {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 12px;
+          align-items: stretch;
+          margin-top: 12px;
         }
 
-        .node-board::after {
+        .progress-step {
+          border: 1px solid var(--line);
+          border-radius: 20px;
+          padding: 18px 16px;
+          background: rgba(255,255,255,0.025);
+          position: relative;
+        }
+
+        .progress-step::after {
           content: "";
           position: absolute;
-          inset: 0;
-          background:
-            radial-gradient(circle at 25% 28%, rgba(24,199,161,0.12), transparent 18%),
-            radial-gradient(circle at 72% 24%, rgba(91,140,255,0.12), transparent 20%),
-            radial-gradient(circle at 58% 72%, rgba(215,166,76,0.12), transparent 16%);
-          pointer-events: none;
+          top: 50%;
+          right: -7px;
+          width: 14px;
+          height: 1px;
+          background: rgba(255,255,255,0.16);
+          transform: translateY(-50%);
         }
 
-        .node-svg {
-          width: 100%;
-          height: 220px;
-          position: relative;
-          z-index: 1;
+        .progress-step:last-child::after {
+          display: none;
+        }
+
+        .progress-number {
+          font-size: 11px;
+          letter-spacing: 0.16em;
+          text-transform: uppercase;
+          color: var(--soft);
+          margin-bottom: 10px;
+        }
+
+        .progress-title {
+          margin: 0 0 8px;
+          font-size: 1rem;
+          font-weight: 620;
+        }
+
+        .progress-copy {
+          margin: 0;
+          font-size: 13px;
+          line-height: 1.65;
+          color: var(--muted);
         }
 
         .tier-grid {
@@ -744,7 +803,7 @@ export default function App() {
           position: relative;
           border-radius: 26px;
           padding: 24px;
-          min-height: 320px;
+          min-height: 360px;
           transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
         }
 
@@ -798,7 +857,7 @@ export default function App() {
         .tier-list {
           list-style: none;
           padding: 0;
-          margin: 0;
+          margin: 0 0 22px;
           display: grid;
           gap: 11px;
         }
@@ -828,6 +887,10 @@ export default function App() {
 
         .tier-diamond .tier-list li::before {
           background: rgba(24,199,161,0.75);
+        }
+
+        .tier-cta {
+          width: 100%;
         }
 
         .principle-grid {
@@ -891,7 +954,8 @@ export default function App() {
           .access-grid,
           .signals,
           .tier-grid,
-          .principle-grid {
+          .principle-grid,
+          .progress-strip {
             grid-template-columns: 1fr;
           }
 
@@ -902,6 +966,10 @@ export default function App() {
           .signal-detail,
           .principle-text {
             max-width: none;
+          }
+
+          .progress-step::after {
+            display: none;
           }
         }
 
@@ -948,7 +1016,8 @@ export default function App() {
             flex-direction: column;
           }
 
-          .btn {
+          .btn,
+          .tier-cta {
             width: 100%;
           }
 
@@ -968,7 +1037,9 @@ export default function App() {
       <main className="cc-wrap">
         <section className="cc-topbar">
           <div className="brand-lockup">
-            <div className="brand-mark">CC</div>
+            <div className="brand-mark">
+              <BuildingMark />
+            </div>
             <div className="brand-text">
               <div className="brand-kicker">Private Capital Interface</div>
               <div className="brand-title">Corey Capital</div>
@@ -1035,67 +1106,65 @@ export default function App() {
             </div>
 
             <div className="cta-row">
-              <a href="#entry-layer" className="btn btn-primary">Begin Qualification</a>
+              <a href="#entry-preview" className="btn btn-primary">Begin Qualification</a>
               <a href="#capital-pathways" className="btn btn-secondary">View Capital Pathways</a>
               <a href="#tier-architecture" className="btn btn-tertiary">Review Access Tiers</a>
             </div>
           </div>
 
-          <div className="hero-right" id="entry-layer">
+          <div className="hero-right" id="entry-preview">
             <div className="entry-label">
               <SectionIcon type="architecture" />
-              <span>Entry Layer</span>
+              <span>Entry Preview</span>
             </div>
 
-            <h2 className="entry-title">Private Access Portal</h2>
+            <h2 className="entry-title">A guided starting point for serious operators.</h2>
             <p className="entry-copy">
-              Structured for qualified users seeking business credit, capital
-              positioning, and controlled progression into higher-trust access.
+              The first step is not complexity. It is orientation, qualification,
+              and a clear next move into the right access layer.
             </p>
             <div className="trust-line">
               Built on proven credit and capital frameworks
             </div>
 
-            <form className="form-shell">
-              <div className="field">
-                <label>Name or Business Email</label>
-                <input type="text" placeholder="Enter your information" />
+            <div className="preview-stack">
+              <div className="preview-item">
+                <div className="preview-item-top">
+                  <span className="preview-label">Access Layer</span>
+                  <span className="preview-value">Entry</span>
+                </div>
+                <p className="preview-copy">
+                  Begin with a structured intake designed to reduce friction and
+                  establish fit.
+                </p>
               </div>
 
-              <div className="field">
-                <label>Primary Objective</label>
-                <select defaultValue="">
-                  <option value="" disabled>
-                    Select an access pathway
-                  </option>
-                  <option>Business credit positioning</option>
-                  <option>Capital access strategy</option>
-                  <option>Entity readiness and qualification</option>
-                  <option>High-touch proximity request</option>
-                </select>
+              <div className="preview-item">
+                <div className="preview-item-top">
+                  <span className="preview-label">Profile Signal</span>
+                  <span className="preview-value">Pending Review</span>
+                </div>
+                <p className="preview-copy">
+                  Qualification is shaped by readiness, objective, and the
+                  strength of the operating profile.
+                </p>
               </div>
 
-              <div className="field">
-                <label>Operator Profile</label>
-                <select defaultValue="">
-                  <option value="" disabled>
-                    Choose your current stage
-                  </option>
-                  <option>Foundation / early positioning</option>
-                  <option>Expansion / established trajectory</option>
-                  <option>Deployment / advanced readiness</option>
-                </select>
+              <div className="preview-item">
+                <div className="preview-item-top">
+                  <span className="preview-label">Recommended Path</span>
+                  <span className="preview-value">Tier Alignment</span>
+                </div>
+                <p className="preview-copy">
+                  Users are guided toward the most appropriate entry point, not
+                  overwhelmed with every possibility at once.
+                </p>
               </div>
-
-              <a href="#tier-architecture" className="btn btn-primary" style={{ width: "100%" }}>
-                Access Entry Layer
-              </a>
-            </form>
+            </div>
 
             <div className="entry-footer">
-              The site is the front door. The real engine is qualification,
-              capture, and controlled progression through increasingly valuable
-              capital pathways.
+              This interface is designed to feel safe, selective, and intuitive
+              while guiding the right users deeper into Corey’s ecosystem.
             </div>
           </div>
         </section>
@@ -1142,9 +1211,9 @@ export default function App() {
               </h2>
               <p className="panel-copy">
                 This interface is designed to feel less like a page and more
-                like a governed financial environment. Each layer is intended to
+                like a governed financial environment. Each step is meant to
                 create confidence through structure, measured visibility, and
-                progressive access.
+                intuitive forward movement.
               </p>
 
               <p className="capital-line">
@@ -1153,26 +1222,14 @@ export default function App() {
               </p>
             </div>
 
-            <div className="node-board">
-              <svg className="node-svg" viewBox="0 0 520 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M72 50C130 50 130 110 190 110H330C392 110 394 58 450 58" stroke="rgba(255,255,255,0.16)" strokeWidth="1.5" />
-                <path d="M72 168C140 168 138 110 190 110" stroke="rgba(255,255,255,0.12)" strokeWidth="1.5" />
-                <path d="M330 110C392 110 388 162 450 162" stroke="rgba(255,255,255,0.12)" strokeWidth="1.5" />
-
-                <circle cx="72" cy="50" r="18" fill="rgba(91,140,255,0.18)" stroke="rgba(91,140,255,0.65)" />
-                <circle cx="72" cy="168" r="18" fill="rgba(215,166,76,0.18)" stroke="rgba(215,166,76,0.65)" />
-                <circle cx="190" cy="110" r="22" fill="rgba(24,199,161,0.18)" stroke="rgba(24,199,161,0.75)" />
-                <circle cx="330" cy="110" r="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.34)" />
-                <circle cx="450" cy="58" r="18" fill="rgba(91,140,255,0.14)" stroke="rgba(91,140,255,0.55)" />
-                <circle cx="450" cy="162" r="18" fill="rgba(215,166,76,0.14)" stroke="rgba(215,166,76,0.55)" />
-
-                <text x="72" y="54" textAnchor="middle" fill="rgba(237,242,255,0.88)" fontSize="10" letterSpacing="1.2">ENTRY</text>
-                <text x="72" y="172" textAnchor="middle" fill="rgba(237,242,255,0.88)" fontSize="10" letterSpacing="1.2">PROFILE</text>
-                <text x="190" y="114" textAnchor="middle" fill="rgba(237,242,255,0.94)" fontSize="10" letterSpacing="1.2">QUALIFY</text>
-                <text x="330" y="114" textAnchor="middle" fill="rgba(237,242,255,0.88)" fontSize="10" letterSpacing="1.2">PROGRESS</text>
-                <text x="450" y="62" textAnchor="middle" fill="rgba(237,242,255,0.88)" fontSize="10" letterSpacing="1.2">ACCESS</text>
-                <text x="450" y="166" textAnchor="middle" fill="rgba(237,242,255,0.88)" fontSize="10" letterSpacing="1.2">DEPLOY</text>
-              </svg>
+            <div className="progress-strip">
+              {progressionSteps.map((item) => (
+                <div className="progress-step" key={item.step}>
+                  <div className="progress-number">Step {item.step}</div>
+                  <h3 className="progress-title">{item.title}</h3>
+                  <p className="progress-copy">{item.detail}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -1192,7 +1249,7 @@ export default function App() {
           <p className="panel-copy">
             Each level reflects greater strategic depth, stronger signal, and
             increased proximity to Corey’s methodology. The progression is meant
-            to feel earned, controlled, and scalable.
+            to feel earned, controlled, and commercially intuitive.
           </p>
 
           <div className="tier-grid">
@@ -1208,6 +1265,10 @@ export default function App() {
                     <li key={bullet}>{bullet}</li>
                   ))}
                 </ul>
+
+                <a href="#entry-preview" className={`btn ${tier.accent === "tier-diamond" ? "btn-primary" : "btn-secondary"} tier-cta`}>
+                  {tier.cta}
+                </a>
               </article>
             ))}
           </div>
